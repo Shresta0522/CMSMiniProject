@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pages.name %></title>
+</head>
+<body>
+
+    <div class="pagesLinks">
+        <h1>Here are the list of  all Pages.</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Page Name </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% pages.forEach(page => { %>
+                    <tr>
+                    <td><a href="/eachpage/<%= page.pageTitle %>"><%= page.pageTitle %></a></td>
+                    <td><a href="/page/edit/<%= page.pageTitle %>" class="editbutton">Edit</a>
+                    </td>
+                    <td>
+                        <form action="/page/delete/<%= page.pageTitle %>" method="POST">
+                          <input type="hidden"  name='_method' value="DELETE">
+                          <button type="submit" class="btn"  onclick="return confirm('Are you sure you want to delete <%= page.pageTitle %>?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        
+        <br/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Edit Item</title>
+</head>
+<body>
+    <h1>User Edit Item</h1>
+    <form action="/user/edit/<%= user.name %>" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= user.name %>">
+        <!-- Add other fields you want to edit -->
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="<%= user.email %>">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="<%= user.phone %>">
+        <label for="role">Role:</label>
+        <input type="text" id="role" name="role" value="<%= user.role %>">
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" value="<%= user.password %>">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

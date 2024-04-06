@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="mainrow">
+                <div class="topcolumn" id="header">
+                    <h2>Create New Pages Here..!</h2>      
+                </div>
+ 
+            </div>
+    
+            <form action="/createpage" method="POST" enctype="multipart/form-data">
+                <h2> Page Form</h2>
+                <input type="text" class="box" id="pageTitle" name="pageTitle" placeholder="pageTitle" required/>
+                <br>
+                <input type="text" class="box" id="pageContent" name="pageContent" placeholder="page Content" required/>
+                <br>
+                <input type="file" id="media" name="media" accept="image/*, video/*" required><br>
+                <br>
+                <input type="text" class="box" id="pageFooter" name="pageFooter" placeholder="pageFooter"/>
+                <br>
+                <input type="submit" value="Submit" id="submit" />
+        
+            </form>
+            
+            <div class="footer">
+                <h5>
+                    Footer
+                </h5>
+            </div>
+            </div>
+    </div>
+</body>
+</html>

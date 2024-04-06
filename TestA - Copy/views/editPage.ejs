@@ -1,0 +1,24 @@
+<!-- edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Edit Item</title>
+</head>
+<body>
+    <h1>Page Edit Item</h1>
+    <form action="/page/edit/<%= page.pageTitle %>" method="POST" enctype="multipart/form-data" >
+        <label for="name">PageTitle:</label>
+        <input type="text" id="pageTitle" name="pageTitle" value="<%= page.pageTitle %>">
+        <label for="phone">PageContent:</label>
+        <input type="text" id="pageContent" name="pageContent" value="<%= page.pagecontent %>">
+        <label for="role">Media:</label>
+        <input type="file" id="media" name="media"accept="image/*, video/*">
+        <img src="/uploads/<%= page.media %>" alt="Uploaded Image">
+        <label for="password">PageFooter:</label>
+        <input type="text" id="pageFooter" name="pageFooter" value="<%= page.pagefooter %>">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

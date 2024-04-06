@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pages.name %></title>
+</head>
+<body>
+
+    <div class="pagesLinks">
+        <h1>Here are the list of  all Pages.</h1>
+        <ul>
+            <% pages.forEach(page => { %>
+            <li><a href="/eachpage/<%= page.pageTitle %>"><%= page.pageTitle %></a></li>
+            <% }); %>
+        </ul> 
+    </div>
+</body>
+</html>

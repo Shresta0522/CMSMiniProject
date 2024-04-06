@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= users.name %></title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <a href="/user/edit/<%= user.name %>" class="editbutton">Edit</a>
+            <form action="/user/delete/<%= user.name %>" method="POST">
+              <input type="hidden"  name='_method' value="DELETE">
+              <button type="submit" class="btn"  onclick="return confirm('Are you sure you want to delete <%= user.name %>?')">Delete</button>
+          </form>
+
+          <script>
+            function deleteData(){
+              const id = document.getElementById('deletebutton').value;
+
+                fetch('/user/delete/<%= user.name %>',{
+                  method: 'DELETE',
+                  headers:{
+                    "Content-Type": "application/json",
+                  }
+                })
+                .then(response => response.json())
+                .then(user => {
+                  // Remove deleted item from table
+                  const row = document.querySelector(`tr[data-id="${user.name}"]`);
+                  if (row) {
+                    row.remove();
+                  }
+                })
+             }
+          </script>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <a href="/" class="btn">Create New User</a>
+</body>
+</html>

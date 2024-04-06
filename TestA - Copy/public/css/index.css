@@ -1,0 +1,54 @@
+body{
+    background-color: lightblue;
+    border: solid;
+}
+/* .row{
+    background-color: lightgrey;
+    height: 120px;
+} */
+.topcolumn{
+    float: left;
+}
+#header{
+    text-align: left;
+    width:90%;
+    
+}
+#link{
+    text-align: center;
+    width:10%;
+    
+}
+
+.mainrow:after {
+    content: "";
+    display: table;
+    clear: both;
+    background-color: aqua;
+}
+
+
+
+.navbar{
+    background-color: lightpink ;
+    height: 60px;
+    border: none;
+    text-align: center;
+}
+
+#center_content{
+    background-color: azure;
+    height:  500px;
+    border: solid;
+    text-align: center;
+}
+.footer{
+    background-color: blanchedalmond;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 70%;
+    height: 50px;
+    border: solid;
+}
